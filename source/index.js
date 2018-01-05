@@ -1,8 +1,6 @@
-require('./index.css')
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-function updateTime() {
-  document.getElementById('time').innerHTML = (new Date()).toLocaleTimeString()
-}
+import { App } from './components/app';
 
-updateTime()
-setInterval(updateTime, 1000)
+ReactDOM.render(<App />, document.getElementById('app'));
