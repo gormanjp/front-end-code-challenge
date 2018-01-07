@@ -16,6 +16,7 @@ export class Search extends Component {
   }
 
   render(){
+    const results = this.state.suggestions.slice(0,5);
     return(
       <div className="container search-container">
         <input
@@ -25,6 +26,13 @@ export class Search extends Component {
           placeholder="City"
           onChange={this.onInputChange}
         />
+        <div className="suggest" style={{ display: results.length ? 'block' : 'none'}}>
+          <ul className="suggest-list">
+            {results.map((s) => {
+              return(<li key={s.id} className="raleway-small">{s.name}</li>)
+            })}
+          </ul>
+        </div>
       </div>
     )
   }
