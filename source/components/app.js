@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search } from '../components/search';
+import { Search } from '../containers/search';
 
 export const App = () => {
   return(
