@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
-import { fetchHotels } from '../actions/index';
+import { fetchCheapest, fetchStars, fetchPopular } from '../actions/index';
 
-const URL = 'http://localhost:3000/autofill?query='
+const URL = 'http://localhost:3000/autofill?query=';
+const apple = {banana: 2};
+const banana = {...apple, tulip: 4}
 
 class Search extends Component {
   constructor(props){
@@ -25,7 +27,9 @@ class Search extends Component {
   }
 
   onSelectLocation(location){
-    this.props.fetchHotels(location.id);
+    this.props.fetchCheapest(location.id);
+    this.props.fetchStars(location.id);
+    this.props.fetchPopular(location.id);
     this.setState({
       suggestions: [],
       value: location.name
@@ -65,7 +69,7 @@ class Search extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchHotels }, dispatch);
+  return bindActionCreators({ fetchCheapest, fetchStars, fetchPopular }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(Search);

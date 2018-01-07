@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from '../containers/search';
+import Hotels from '../containers/hotels';
 
 export const App = () => {
   return(
@@ -10,6 +11,7 @@ export const App = () => {
           <h4 className="raleway-small">CHEAPEST.  HIGHEST RATED.  BEST.</h4> */}
         </div>
         <Search />
+        <Hotels />
       </div>
   )
 }
