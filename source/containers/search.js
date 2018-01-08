@@ -13,7 +13,8 @@ class Search extends Component {
     super(props);
     this.state = {
       suggestions: [],
-      value: ''
+      value: '',
+      placeholder: 'city'
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onSelectLocation = this.onSelectLocation.bind(this);
@@ -45,8 +46,9 @@ class Search extends Component {
           type="text"
           align="middle"
           value={this.state.value ? this.state.value : ''}
-          placeholder="city"
+          placeholder={this.state.placeholder}
           onChange={this.onInputChange}
+          onFocus={() => this.setState({ placeholder: '', value: '' })}
         />
         <div className="suggest" style={{ display: results.length ? 'block' : 'none'}}>
           <ul className="suggest-list">
