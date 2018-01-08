@@ -92,11 +92,12 @@
 
 /* Hotel Card */
 .card-container {
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
 
 .card-deck {
   margin-top: 30px;
+  max-width: 100%;
 }
 
 .card-title {
